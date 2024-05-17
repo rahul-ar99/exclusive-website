@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+<body>
+    <section class="offer">
+        <div class="wrapper">
+            <div class="offer-div">
+                <p class="summerSale">summer sale for all swim suits and free express delivery - OFF 50%! <a href="">ShopNow</a></p>
+                <div class="langauge">
+                    <select name="" id="">
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+    <header>
+        <div class="wrapper">
+            <div class="header-div">
+                <h1>
+                    <a href="#">
+                        <img src="{% static './images/Logo.png' %}" alt="">
+                    </a>
+                </h1>
+                <nav>
+                    <a href="{% url 'web:index' %}">home</a>
+                    <a href="{% url 'web:view_products' %}">Contact</a>
+                    <a href="{% url 'web:product_list' %}">About</a>
+                    <a href="">Sign up</a>
+                    <a href="">Add product</a>
+                </nav>
+                <div class="right_nav">
+                    <div class="searchDiv">
+                        <input type="text" placeholder="What are you looking for?">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <div>
+                        <i class="fa fa-heart-o"></i>
+                    </div>
+                    <div>
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer>
+        <div class="wrapper">
+
+            <div class="footer-main">
+                <div class="column-container">
+                    <h5>exclusive</h5>
+                    <h6>Subscribe</h6>
+                    <p>Get 10% off your first order</p>
+                    <div class="newsletter-input">
+                        <form action="{% url 'web:subscribe' %}" method="POST" class="ajax">
+                            {% csrf_token %}
+                            <input type="email" placeholder="enter your email" name="email">
+                            <button type="submit"><svg width="30" height="30" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.91196 12H3.99996L2.02296 4.13499C2.0103 4.08928 2.00259 4.04234 1.99996 3.99499C1.97796 3.27399 2.77196 2.77399 3.45996 3.10399L22 12L3.45996 20.896C2.77996 21.223 1.99596 20.737 1.99996 20.029C2.00198 19.9657 2.0131 19.9031 2.03296 19.843L3.49996 15" stroke="#FAFAFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <!-- <button type="submit"><img src="{% static 'images/icon-send.png' %}" alt="sent-icon"></button> -->
+                        </form>
+                    </div>
+                </div>
+                <div class="column-container">
+                    <h6>support</h6>
+                    <p>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p>
+                    <p>exclusive@gmail.com</p>
+                    <p>+88015-88888-9999</p>
+                </div>
+                <div class="column-container">
+                    <h6>account</h6>
+                    <p>my account</p>
+                    <p>login / register</p>
+                    <p>categories</p>
+                    <p>wishlist</p>
+                    <p>shop</p>
+                </div>
+                <div class="column-container">
+                    <h6>quick link</h6>
+                    <p>privacy policy</p>
+                    <p>terms of use</p>
+                <p>faq</p>
+                <p>contact</p>
+            </div>
+            <div class="column-container">
+                <h6>download app</h6>
+                <div class="qr-code">
+                    <p>Save $3 with App New User Only</p>
+                    <div class="center">
+                        <div class="qr-image">
+                            <img src="{% static 'images/Qrcode.jpg' %}" alt="qrCode">
+                        </div>
+                        <div class="download-platform">
+                            <div class="downloaded-by">
+                                <img src="{% static 'images/download-appstore.jpg' %}" alt="appStore">
+                            </div>
+                            <div class="downloaded-by">
+                                <img src="{% static 'images/download-playstore.jpg' %}" alt="playstore">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <div class="each">
+                            <img src="{% static 'images/icon-instagram.png' %}" alt="social-media-icon">
+                        </div>
+                        <div class="each">
+                            <img src="{% static 'images/Icon-Facebook.png' %}" alt="social-media-icon">
+                        </div>
+                        <div class="each">
+                            <img src="{% static 'images/Icon-Twitter.png' %}" alt="social-media-icon">
+                        </div>
+                        <div class="each">
+                            <img src="{% static 'images/Icon-Linkedin.png' %}" alt="social-media-icon">
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright Rimel 2022. All right reserved</p>
+    </div>
+    </footer>
+    
+</body>
+<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/sweetalert2.min.js' %}"></script>
+</html>

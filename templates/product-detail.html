@@ -1,0 +1,138 @@
+{% extends './base.html' %}
+{% block content %}
+{% load static %}
+ 
+    <section id="location">
+        <div class="wrapper">
+            <div class="location-div">
+                <div>
+                    <p>home</p>
+                    <p>/</p>
+                    <p>{{instance.product_category}}</p>
+                    <p>/</p>
+                    <span>{{instance.product_name}}</span>
+                    <!-- <span>Havic HV G-92 Gamepad</span> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="single">
+        <div class="wrapper">
+            <div class="single-div">
+                <div class="left">
+                    <div class="single-image">
+                        <!-- <img src="{% static 'images/Frame 894.jpg' %}" alt="Item-image"> -->
+                        <img src="{{instance.product_image.url}}" alt="Item-image">
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="top">
+                        <h5>{{instance.product_name}}</h5>
+                        <div class="rating">
+                            <div class="stars">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <p>({{instance.no_of_people_rated}} reviews)</p>
+                            <p>|</p>
+                            <span>in stock</span>
+                        </div>
+                        <p class="price">${{instance.price}}.00</p>
+                        <p class="details">{{instance.discription}}</p>
+                    </div>
+                    <div class="bottom">
+                        <div class="colors">
+                            <p>colours:</p>
+                            <div class="color">
+                                <div class="clr1"></div>
+                                <div class="clr2"></div>
+                            </div>
+                        </div>
+                        <div class="features">
+                            <div class="feature">
+                                <div class="image">
+                                    <img src="{% static 'images/services-delivery.png' %}" class="image-1" alt="delivery-icon">
+                                </div>
+                                <div>
+                                    <p class="head">Free Delivery</p>
+                                    <p class="content">Enter your postal code for Delivery Availability</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <div class="image">
+                                    <img src="{% static 'images/Icon-return.png' %}" alt="return-icon">
+                                </div>
+                                <div>
+                                    <p class="head">Return Delivery</p>
+                                    <p class="content">Free 30 Days Delivery Returns. Details</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="products">
+        <div class="wrapper">
+            <div class="products-div">
+                <div class="tophead">
+                    <div></div>
+                    <h3>Categories</h3>
+                </div>
+                <div class="items active">
+                    {% for category_list in category_lists %}
+                    <div class="item">
+                        <a href="{% url 'web:product' id=category_list.id %}">
+
+                            <div class="item-image">
+                                <div class="topsection">
+                                    <div class="image">
+                                        <img src="{{category_list.product_image.url}}" alt="item-image">
+                                    </div>
+                                </div>
+                                <div class="item-icons">
+                                    
+                                    <div class="item-i  con">
+                                    <i class="fa fa-heart-o"></i>
+                                </div>
+                                <div class="item-icon">
+                                    <i class="fa fa-heart-o"></i>
+                                </div>
+                            </div>
+                            <div class="addCart">
+                                <p>Add to cart</p>
+                            </div>
+                        </div>
+                        <div class="item-main">
+                            <p class="item-head">{{category_list.product_name}}</p>
+                            <div class="bottom-part">
+                                <p class="price">$100</p>
+                                <div>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <p class="review">(23)</p>
+                            </div>
+                        </div>
+                        <div class="item-bottom">
+                            <div class="color">
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+  {% endblock %}

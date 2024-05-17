@@ -1,0 +1,87 @@
+{% extends './base.html' %}
+{% block content %}
+{% load static %}
+
+  
+    <section id="location">
+        <div class="wrapper">
+            <div class="location-div">
+                <div>
+                    <p>home</p>
+                     <p>/</p>
+                     <span>products</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="products">
+        <div class="wrapper">
+            <div class="products-div">
+                <div class="items active">
+                    {% for product in products %}
+                    <div class="item">
+                        <a href="{% url 'web:product' id=product.id %}">
+
+                            <div class="item-image">
+                                <div class="topsection">
+                                    <div class="image">
+                                        <img src="{{product.product_image.url}}" alt="item-image">
+                                        <!-- <img src="{% static './images/items_1.jpg' %}" alt="item-image"> -->
+                                    </div>
+                                </div>
+                                <div class="item-new-offer" >
+                                {% if product.date == today %}
+                                    <div class="item-new">
+                                        <p>new</p>
+                                    </div>
+                                
+                                {% endif %}
+                                {% if product.discount > 0 %}
+                                    <div class="item-offer">
+                                        <p>-{{product.discount}}%</p>
+                                    </div>
+                                {% endif %}
+                                </div>
+                                <div class="item-icons">
+                                    <div class="item-icon">
+                                        <i class="fa fa-heart-o"></i>
+                                    </div>
+                                    <div class="item-icon">
+                                        <i class="fa fa-heart-o"></i>
+                                    </div>
+                                </div>
+                                <div class="addCart">
+                                    <p>Add to cart</p>
+                                </div>
+                            </div>
+                            <div class="item-main">
+                                <p class="item-head">{{product.product_name}}</p>
+                         
+                                <div class="bottom-part">
+                                    <p class="price">${{product.price}}</p>
+                                    <div>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <p class="review">({{product.no_of_people_rated}})</p>
+                            </div>
+                        </div>
+                        <div class="item-bottom">
+                            <div class="color">
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                    {% endfor %}
+                   
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
