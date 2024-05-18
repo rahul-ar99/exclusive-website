@@ -49,9 +49,12 @@ def product(request, id):
     instance = get_object_or_404(Product.objects.filter(id=id))
     usercatogary = instance.product_category
     category = Product.objects.filter(product_category=usercatogary)
+    category_len = len(category) - 5
+
     context = {
         "instance":instance,
-        "category_lists" : category[:4:-1]
+        "category_lists" : category[:category_len:-1],
+        # "star_count":star_count
     }
     return render(request,'product-detail.html', context=context)
 
@@ -70,8 +73,19 @@ def products_list(request):
     return render(request, 'product-list.html', context=context)
 
 
+def add_product_page(request):
+    if request.method == 'POST':
+        pass
+    else:
+        form = ProductForm()
+        context = {
+            "form":form
+        }
+
+    return render(request,'add-product.html', context=context)
 
 
+#function
 def subscribe(request):
     email = request.POST.get('email')
     
@@ -97,14 +111,27 @@ def subscribe(request):
     return HttpResponse(json.dumps(response_data),content_type="applicatoin/javascript")
 
 
+#function
+def add_product(request): 
 
-def add_product_page(request):
     if request.method == 'POST':
-        pass
-    else:
-        form = ProductForm()
-        context = {
-            "form":form
-        }
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # return redirect('index')
 
-    return render(request,'add-product.html', context=context)
+            response_data = {
+            'status':"success",
+            'title':"Successfully product added",
+            "message":"Your product is now added successfully"
+            }
+
+            return HttpResponse(json.dumps(response_data),content_type="applicatoin/javascript")
+        else:
+            response_data = {
+            'status':"error",
+            'title':"Your product is not added, some field get an error",
+            "message":"check discount or rating"
+            }
+
+            return HttpResponse(json.dumps(response_data),content_type="applicatoin/javascript")

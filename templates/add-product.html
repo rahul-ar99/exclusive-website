@@ -18,7 +18,7 @@
                 <div class="heading">
                     <h3>add product</h3>
                 </div>
-                <form action="" method="post">
+                <form action="{% url 'web:add_product' %}" method="post" class="ajax">
                     {% csrf_token %}
                     <div class="input-div">
                         <label for="{{form.product_name.id_for_label}}">{{form.product_name.label}}</label>
@@ -41,11 +41,11 @@
                         {{form.date}}
                     </div>
                     <div class="input-div">
-                        <label for="{{form.discount.id_for_label}}">{{form.discount.label}}</label>
+                        <label for="{{form.discount.id_for_label}}">{{form.discount.label}}  (0-100)</label>
                         {{form.discount}}
                     </div>
                     <div class="input-div">
-                        <label for="{{form.rating.id_for_label}}">{{form.rating.label}}</label>
+                        <label for="{{form.rating.id_for_label}}">{{form.rating.label}} (0 - 5)</label>
                         {{form.rating}}
                     </div>
                     <div class="input-div">
@@ -60,9 +60,13 @@
                         <input type="submit" value="Add product">
                     </div>
                     
-                     
-
+                    
                 </form>
+                <div class="input-div submit-btn">
+                    <a href="{% url 'web:index' %}">
+                        <button>back to home</button>
+                    </a>
+                </div>
             </div>
         </div>
     </section>

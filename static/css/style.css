@@ -13,6 +13,7 @@ a{
     color: #000000;
 }
 
+
 /* .active{
     background-color: blue;
 } */
@@ -121,6 +122,7 @@ header .header-div .right_nav .searchDiv input{
     font-size: 18px;
     border: none;
     outline: none;
+    background-color: transparent;
 }
 header .header-div .right_nav .searchDiv input:active + .searchDiv{
     border: 1px solid black;
@@ -873,7 +875,7 @@ footer .copyright {
     padding: 20px 20px;
     border: 1px solid rgba(0, 0, 0, 0.397);
     border-radius: 10px;
-    background-color: #A0BCE0;
+    background-color: #a0bce06b;
     width: min-content;
     margin: 50px 0;
 }
@@ -909,7 +911,14 @@ footer .copyright {
 #add-product .wrapper .add-product-div form .submit-btn{
     width: 100%;
 }
+
 #add-product .wrapper .add-product-div form .submit-btn input{
     width: 100%;
+}
 
+#add-product .wrapper .add-product-div .submit-btn button{
+    padding: 10px 70px;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 50px;
 }
