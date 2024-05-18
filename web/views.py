@@ -6,6 +6,7 @@ from django.http.response import HttpResponse
 from datetime import date
 
 from web.models import Subscribe, Product
+from web.form import ProductForm
 
 # Create your views here.
 def index(request):
@@ -94,3 +95,16 @@ def subscribe(request):
 
 
     return HttpResponse(json.dumps(response_data),content_type="applicatoin/javascript")
+
+
+
+def add_product_page(request):
+    if request.method == 'POST':
+        pass
+    else:
+        form = ProductForm()
+        context = {
+            "form":form
+        }
+
+    return render(request,'add-product.html', context=context)

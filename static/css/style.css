@@ -377,7 +377,7 @@ header .header-div .right_nav div i {
 }
 
 #products .products-div .items .item .item-image {
-    background-color: #F5F5F5;
+    /* background-color: #F5F5F5; */
     width: 100%;
     position: relative;
 }
@@ -841,4 +841,75 @@ footer .copyright {
 #single .wrapper .single-div .right .bottom .features .feature div p.content {
     font-size: 14px;
     text-decoration: underline;
+}
+
+
+/* ------------------------------------------------------------------------- */
+/* ----------------------- add a product ----------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+#add-product { 
+
+}
+
+#add-product .wrapper { 
+
+}
+
+#add-product .wrapper .add-product-div { 
+
+}
+
+#add-product .wrapper .add-product-div .heading { 
+
+}
+
+#add-product .wrapper .add-product-div .heading h3 { 
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+#add-product .wrapper .add-product-div form { 
+    padding: 20px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.397);
+    border-radius: 10px;
+    background-color: #A0BCE0;
+    width: min-content;
+    margin: 50px 0;
+}
+
+#add-product .wrapper .add-product-div form .input-div { 
+    display: flex;
+    /* justify-content: space-between; */
+    width: min-content;
+    margin-bottom: 20px;
+}
+
+#add-product .wrapper .add-product-div form .input-div label { 
+    min-width: 300px;
+    font-size: 20px;
+    padding: 5px 0px;
+    text-transform: capitalize;
+    
+}
+
+#add-product .wrapper .add-product-div form .input-div input { 
+    padding: 5px 10px;
+    font-size: 20px;
+    width: 450px;
+    
+}
+
+#add-product .wrapper .add-product-div form .input-div textarea { 
+    resize: vertical;
+    width: 450px;
+    padding: 5px 10px;
+}
+
+#add-product .wrapper .add-product-div form .submit-btn{
+    width: 100%;
+}
+#add-product .wrapper .add-product-div form .submit-btn input{
+    width: 100%;
+
 }

@@ -1,0 +1,70 @@
+{% extends './base.html' %}
+{% block content %}
+{% load static %}
+    <section id="location">
+        <div class="wrapper">
+            <div class="location-div">
+                <div>
+                    <p>home</p>
+                     <p>/</p>
+                     <span>add products</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="add-product">
+        <div class="wrapper">
+            <div class="add-product-div">
+                <div class="heading">
+                    <h3>add product</h3>
+                </div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="input-div">
+                        <label for="{{form.product_name.id_for_label}}">{{form.product_name.label}}</label>
+                        {{form.product_name}}
+                    </div>
+                    <div class="input-div">
+                        <label for="{{form.price.id_for_label}}">{{form.price.label}}</label>
+                        {{form.price}}
+                    </div>
+                    <div class="input-div">
+                        <label for="{{form.product_category.id_for_label}}">{{form.product_category.label}}</label>
+                        {{form.product_category}}
+                    </div>
+                    <div class="input-div">
+                        <label for="{{form.discription.id_for_label}}">{{form.discription.label}}</label>
+                        {{form.discription}}
+                    </div>
+                    <div class="input-div">
+                        <label for="{{form.date.id_for_label}}">{{form.date.label}}</label>
+                        {{form.date}}
+                    </div>
+                    <div class="input-div">
+                        <label for="{{form.discount.id_for_label}}">{{form.discount.label}}</label>
+                        {{form.discount}}
+                    </div>
+                    <div class="input-div">
+                        <label for="{{form.rating.id_for_label}}">{{form.rating.label}}</label>
+                        {{form.rating}}
+                    </div>
+                    <div class="input-div">
+                        <label for="{{form.no_of_people_rated.id_for_label}}">{{form.no_of_people_rated.label}}</label>
+                        {{form.no_of_people_rated}}
+                    </div>
+                    <div class="input-div">
+                        <label for="{{form.product_image.id_for_label}}">{{form.product_image.label}}</label>
+                        {{form.product_image}}
+                    </div>
+                    <div class="input-div submit-btn">
+                        <input type="submit" value="Add product">
+                    </div>
+                    
+                     
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
