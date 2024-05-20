@@ -5,11 +5,12 @@ from django.urls import reverse
 from django.http.response import HttpResponse
 from datetime import date
 
-from web.models import Subscribe, Product
+from web.models import Subscribe, Product, Spotlight
 from web.form import ProductForm
 
 # Create your views here.
 def index(request):
+    spotlight = Spotlight.objects.last()
     products = Product.objects.all()
     today = date.today()
     products_len = len(products) - 9
@@ -36,6 +37,7 @@ def index(request):
         "headphone_category":headphone_category[:8:-1],
         "games_category":games_category[:8:-1],
         "camera_category":camera_category[:8:-1],
+        "spotlight":spotlight
     }
 
     

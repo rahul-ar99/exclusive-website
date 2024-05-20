@@ -203,9 +203,9 @@ header .header-div .right_nav div i {
     color: #F5F5F5;
 }
 
-/* #spotlight .spotlight-div .left-center {
-    
-} */
+#spotlight .spotlight-div .left-center {
+    max-width: 55%;   
+}
 #spotlight .spotlight-div .left-center p{
     font-size: 50px;
     font-weight: 500;

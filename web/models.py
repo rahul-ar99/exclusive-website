@@ -35,3 +35,12 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
+    
+class Spotlight(models.Model):
+    logo = models.ImageField(upload_to='spotlight/')
+    product_name = models.CharField(max_length=50)
+    offer = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='spotlight/')
+
+    def __str__(self):
+        return self.product_name
