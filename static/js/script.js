@@ -45,3 +45,24 @@ $(document).ready(function () {
         })
     })
 });
+
+
+// function myFunction() {
+//     var x = document.getElementById("navbar");
+//     if (x.style.display === "block") {
+//       x.style.display = "none";
+//     } else {
+//       x.style.display = "block";
+//     }
+//   }
+// function myFunction() {
+//     $("#navbar").toggle("");
+// }
+function myFunction() {
+    var $navbar = $("#navbar");
+    if ($navbar.css("display") === "none" || $navbar.css("display") === "") {
+        $navbar.css("display", "flex");
+    } else {
+        $navbar.css("display", "none");
+    }
+}

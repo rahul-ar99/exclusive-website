@@ -35,6 +35,7 @@ a{
     color: #ffffff;
     position: relative;
     padding: 15px 0;
+    align-items: center;
 }
 
 .offer .offer-div .summerSale {
@@ -77,8 +78,20 @@ header .header-div {
     align-items: center;
     margin-top: 20px;
     padding: 10px 0;
+    position: relative;
 }
 
+
+header .header-div .hamburger {
+    display: none;
+    border: 1px solid transparent;
+    padding: 3px;
+    border-radius: 3px;
+}
+header .header-div .hamburger:hover {
+    border: 1px solid black;
+
+}
 header .header-div h1 {
     width: 150px;
 }
@@ -111,6 +124,11 @@ header .header-div .right_nav .searchDiv {
     margin-right: 40px;
     padding: 10px 15px;
     border: 1px solid #ffffff;
+    align-items: center;
+
+}
+header .header-div .right_nav .search-icon{
+    display: none;
 }
 
 header .header-div .right_nav .searchDiv:focus-within{
@@ -159,7 +177,6 @@ header .header-div .right_nav div i {
     height: 100%;
     display: flex;
     flex-direction: column;
-
 }
 
 #spotlight .spotlight-div .left-top {
@@ -242,7 +259,7 @@ header .header-div .right_nav div i {
 #categories .categories-div .container  li {
     width: 14%;
     aspect-ratio: 1.2;
-    border: 1px solid rgba(0, 0, 0, 0.101);
+    /* border: 1px solid rgba(0, 0, 0, 0.101); */
 
     row-gap: 10px;
     list-style: none;
@@ -460,12 +477,19 @@ header .header-div .right_nav div i {
 #products .products-div .items .item .item-main .item-head {
     font-size: 18px;
     margin-bottom: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    height: 55px;
 }
 
 #products .products-div .items .item .item-main .bottom-part {
     display: flex;
     color: #DB4444;
     column-gap: 10px;
+    align-items: center;
 }
 
 #products .products-div .items .item .item-main .bottom-part .review {
@@ -570,6 +594,9 @@ footer {
     background-color: #000000;
     color: #ffffff;
     padding: 50px 0 0 0;
+}
+footer a{
+    color: #ffffff;
 }
 
 footer .footer-main {
@@ -922,3 +949,702 @@ footer .copyright {
     text-transform: capitalize;
     margin-bottom: 50px;
 }
+
+/* ----------------------- responsive 1440px ----------------------- */
+/* ----------------------------------------------------------------- */
+@media only screen and (max-width:1440px){
+    .wrapper{
+        max-width: 1280px;
+    }
+
+    /* ---------- offer 1440px -------- */
+    .offer .offer-div{
+        padding:10px
+    }
+    .offer .offer-div .summerSale {
+        font-size:14px;
+    }
+    
+    /* ---------- header 1440px -------- */
+    header .header-div h1 {
+        width: 130px;
+    }
+    header .header-div nav {
+        column-gap: 10px;
+        font-size: 16px;
+    }
+    header .header-div .right_nav .searchDiv{
+        margin-right: 10px;
+    }
+    header .header-div .right_nav .searchDiv input{
+        width: 210px;
+        font-size: 16px;
+    }
+    header .header-div {
+
+        margin-top: 0px;
+        /* padding: 10px 0; */
+    }
+    header .header-div .right_nav div i {
+        font-size: 20px;
+    }
+    /* ---------- spotlight 1440px -------- */
+    #spotlight .spotlight-div .spotlight-logo {
+        width: 40px;
+    }
+    #spotlight .spotlight-div .spotlight-image {
+        width: 50%;
+    }
+    #spotlight .spotlight-div .spotlight-image img{
+        width: 100%;
+    }
+    #spotlight .spotlight-div .left-center p{
+        font-size: 45px;
+        font-weight: 500;
+    
+    }
+    #spotlight .spotlight-div  .left a{
+        font-size: 15px;
+    }
+    /* ---------- spotlight 1440px -------- */
+    #categories .categories-div .container .items .items-image {
+        max-width: 50px;
+    }
+    #categories .categories-div .mainhead p {
+        font-size: 40px;
+    }
+    /* ----------product  1440px----------------- */
+    #products .products-div .items .item .item-main .item-head {
+        font-size: 17px;
+    }
+
+    
+}
+
+
+
+
+/* ----------------------- responsive 1280px ----------------------- */
+/* ----------------------------------------------------------------- */
+@media only screen and (max-width:1280px){
+    .wrapper{
+        max-width: 1080px;
+    }
+
+    /* ---------- spotlight 1440px -------- */
+    #spotlight .spotlight-div .spotlight-logo {
+        width: 35px;
+    }
+
+    #spotlight .spotlight-div .left-center p{
+        font-size: 40px;
+    }
+    #categories .categories-div .container .items .items-image {
+        max-width: 45px;
+    }
+    #categories .categories-div .container .items p {
+        font-size: 17px;
+    }
+    #categories .categories-div .mainhead p {
+        font-size: 33px;
+    }
+    /* ------------- product 1280px -------------- */
+    #products .products-div .items .item .item-main .item-head {
+        font-size: 16px;
+    }
+    /* ----------product  1440px----------------- */
+    #products .products-div .items .item .item-main .item-head {
+        height: 45px;
+    }
+    /* --------------- footer 1280px ------------ */
+    footer .footer-main .column-container h5 {
+        font-size: 27px;
+    }
+    footer .footer-main .column-container h6 {
+        font-size: 20px;
+    }
+    footer .footer-main .column-container p {
+        font-size: 15px;
+    }
+    footer .footer-main .column-container .newsletter-input{
+        padding: 7px 16px;
+    }
+    footer .footer-main .column-container input {
+        font-size: 17px;
+        width: 200px;
+    }
+    footer .footer-main .column-container button {
+        width: 20px;
+
+    }
+}
+
+/* ----------------------- responsive 1080px ----------------------- */
+/* ----------------------------------------------------------------- */
+@media only screen and (max-width:1080px){
+    .wrapper{
+        max-width: 980px;
+    }
+    /* ---------- header 1080px -------- */
+    header .header-div h1 {
+        width: 110px;
+    }
+    header .header-div nav {
+        column-gap: 6px;
+        font-size: 14px;
+    }
+    header .header-div .right_nav .searchDiv{
+        margin-right: 0;
+    }
+    header .header-div .right_nav .searchDiv input{
+        width: 180px;
+        font-size: 14px;
+    }
+    header .header-div {
+
+        padding: 6px 0;
+    }
+    header .header-div .right_nav div i {
+        font-size: 18px;
+    }
+    /* -------------categories 1080px ------------- */
+    #categories .categories-div .container .items .items-image {
+        max-width: 40px;
+    }
+    #categories .categories-div .mainhead p {
+        font-size: 30px;
+    }
+    #categories .categories-div .container .items .items-image {
+        max-width: 40px;
+    }
+    #categories .categories-div .container .items p {
+        font-size: 12px;
+    }
+    /* ------------------- products 1080px ------------------- */
+    #products .products-div .items .item .item-image .item-new-offer .item-new{
+        padding: 3px 7px;
+    }
+    #products .products-div .items .item .item-image .item-new-offer .item-offer{
+        padding: 3px 7px;
+    }
+    #products .products-div .items .item .item-image .addCart p{
+        padding: 6px 0;
+        font-size: 13px;
+    }
+    #products .products-div .items .item .item-main .bottom-part .price{
+        font-size: 15px;
+    }
+    #products .products-div .items .item .item-main .bottom-part div i{
+        font-size: 13px;
+    }
+    #products .products-div .items .item .item-main .bottom-part .review {
+        font-size: 15px;
+    }
+    #products .products-div .view-all button{
+        padding: 13px 40px;
+        font-size: 15px;
+    }
+    /* -------------service 1080px */
+    #services .services .service  .image{
+        width: 60px;
+        background-size: 60px;
+    }
+    #services .services .service  .image img{
+        width: 30px;
+    }
+    #services .services .service .bottom h5{
+        font-size: 17px;
+    }
+    #services .services .service .bottom p{
+        font-size: 15px;
+    }
+    footer .footer-main {
+        flex-wrap: wrap;
+        row-gap: 30px;
+    }
+
+    /* -------------- single 1080px ------------- */
+    #location .location-div div{
+        font-size: 14px;
+    }
+    #single .wrapper .single-div .left {
+        width: 50%;
+    }
+    #single .wrapper .single-div .right {
+        width: 45%;
+    }
+    #single .wrapper .single-div .right .top h5{
+        font-size: 28px;
+    }
+    #single .wrapper .single-div .right .top .price {
+        font-size: 25px;
+    }
+    
+    #single .wrapper .single-div .right .top .details {
+        font-size: 15px;
+    }
+    #single .wrapper .single-div .right .bottom .colors p {
+        font-size: 20px;
+    }
+    #single .wrapper .single-div .right .bottom .colors .color div {
+        width: 15px;
+    }
+    #single .wrapper .single-div .right .bottom .features .feature{
+        padding: 15px 12px;
+    }
+    #single .wrapper .single-div .right .bottom .features .feature .image {
+        width: 35px;
+    }
+    #single .wrapper .single-div .right .bottom .features .feature div p.head {
+        font-size: 16px;
+    }
+    #single .wrapper .single-div .right .bottom .features .feature div p.content {
+        font-size: 13px;
+    }
+
+}
+
+/* ----------------------- responsive 980px ----------------------- */
+/* ----------------------------------------------------------------- */
+@media only screen and (max-width:980px){
+    .wrapper{
+        max-width: 768px;
+    }
+
+    /* ---------- offer 980px ----------- */
+    .offer .offer-div{
+        padding:7px
+    }
+    .offer .offer-div .summerSale {
+        font-size:12px;
+    }
+    .offer .offer-div .langauge select{
+        font-size: 13px;
+    }
+
+
+    /* ---------- header 980px -------- */
+    header .header-div h1 {
+        width: 100px;
+    }
+    header .header-div nav {
+        font-size: 13px;
+    }
+    header .header-div nav a {
+        padding: 2px 5px;
+        text-transform: capitalize;
+    }
+    header .header-div .right_nav{
+        column-gap: 10px;
+    }
+    header .header-div .right_nav .searchDiv{
+        margin-right: 0;
+    }
+    header .header-div .right_nav .searchDiv input{
+        width: 165px;
+        font-size: 13px;
+    }
+    header .header-div {
+
+        padding: 2px 0;
+    }
+    header .header-div .right_nav div i {
+        font-size: 16px;
+    }
+
+    /* ---------- spotlight 980px -------- */
+    #spotlight .spotlight-div .spotlight-logo {
+        width: 25px;
+    }
+    #spotlight .spotlight-div .spotlight-image {
+        width: 50%;
+    }
+    #spotlight .spotlight-div h2 {
+        font-size: 13px;
+    }
+    #spotlight .spotlight-div .left-center p{
+        font-size: 35px;
+    }
+    #spotlight .spotlight-div  .left a{
+        font-size: 13px;
+    }
+    #spotlight .spotlight-div .left {
+        margin-left: 70px;
+    }
+
+    /* -------------categories 1080px ------------- */
+    #categories .categories-div .tophead div {
+        width: 16px;
+        height: 35px;
+    }
+    #categories .categories-div .tophead h3 {
+        font-size: 16px; 
+    }
+
+    #categories .categories-div .container .items .items-image {
+        max-width: 30px;
+    }
+    #categories .categories-div .mainhead p {
+        font-size: 25px;
+    }
+    #categories .categories-div .container .items .items-image {
+        max-width:30px;
+    }
+    #categories .categories-div .container .items p {
+        font-size: 12px;
+    }
+
+    /* ------------- product 980px -------------- */
+    #products .products-div .items .item {
+        max-width: 32%;
+        min-width: 32%;
+    }
+
+    footer .copyright {
+        font-size: 15px;
+        padding: 15px 0;
+    }
+    #add-product .wrapper .add-product-div form .input-div { 
+        flex-direction: column;
+    }
+
+}
+
+
+
+/* ----------------------- responsive 768px ----------------------- */
+/* ----------------------------------------------------------------- */
+@media only screen and (max-width:768px){
+    .wrapper{
+        max-width: 640px;
+    }
+
+
+
+    /* ---------- header 768px -------- */
+    header .header-div{
+        padding: 5px 0;
+    }
+    header .header-div .right_nav .searchDiv{
+        display: none;
+    }
+    header .header-div .right_nav .search-icon{
+        display: flex;
+    }
+    header .header-div h1 {
+        width: 90px;
+    }
+    header .header-div nav {
+        font-size: 12px;
+    }
+    header .header-div nav a {
+        padding: 2px 4px;
+    }
+    header .header-div {
+        padding: 2px 0;
+    }
+    header .header-div .right_nav div i {
+        font-size: 15px;
+    }
+    /* ---------- spotlight 768px -------- */
+    #spotlight .spotlight-div .spotlight-logo {
+        width: 24px;
+    }
+    #spotlight .spotlight-div .spotlight-image {
+        width: 50%;
+    }
+    #spotlight .spotlight-div h2 {
+        font-size: 13px;
+    }
+    #spotlight .spotlight-div .left-center p{
+        font-size: 28px;
+    }
+    #spotlight .spotlight-div  .left a{
+        font-size: 13px;
+    }
+    #spotlight .spotlight-div .left {
+        margin-left: 40px;
+    }
+
+    /* -------------categories 1080px ------------- */
+    #categories .categories-div .tophead div {
+        width: 14px;
+        height: 30px;
+    }
+    #categories .categories-div .tophead h3 {
+        font-size: 14px; 
+    }
+    #categories .categories-div .container .items .items-image {
+        max-width: 24px;
+    }
+    #categories .categories-div .mainhead p {
+        font-size: 22px;
+    }
+    #categories .categories-div .container .items .items-image {
+        max-width:25px;
+    }
+    #categories .categories-div .container .items p {
+        font-size: 12px;
+    }
+    #categories .categories-div .mainhead {
+        margin: 10px 0;
+    }  
+    /* ------------- product 980px -------------- */
+    #products .products-div .items .item {
+        max-width: 48%;
+        min-width: 48%;
+    }
+    #products .products-div .view-all button{
+        padding: 10px 30px;
+        font-size: 13px;
+    }
+
+    #services .services {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+    }
+
+    /* ------------- single 768px ------------- */
+    #single .wrapper .single-div {
+        flex-direction: column;
+    }
+    #single .wrapper .single-div .left {
+        width: 100%;
+    }
+    #single .wrapper .single-div .right {
+        width: 100%;
+    }
+}
+
+
+/* ----------------------- responsive 640px ----------------------- */
+/* ----------------------------------------------------------------- */
+@media only screen and (max-width:640px){
+    .wrapper{
+        max-width: 540px;
+    }
+    
+    
+    /* ---------- offer 640px ----------- */
+    .offer .offer-div{
+        flex-direction: column;
+        align-items: normal;
+    }
+    .offer .offer-div .langauge {
+        margin-top: 2px;
+    }
+    
+    /* ---------- header 640px -------- */
+    header .header-div .hamburger {
+        display: flex;
+    }
+    header .header-div nav {
+        display: none;
+        position: absolute;
+        /* flex-direction: column; */
+        top: 100%;
+        background-color: #ffffff;
+        border: 1px solid black;
+        min-width: 100%;
+        justify-content: space-between;
+        column-gap: 0;
+    }
+
+    /* ---------- spotlight 640px -------- */
+
+    #spotlight .spotlight-div {
+        flex-direction: column;
+    }
+    #spotlight .spotlight-div .left {
+        height: auto;
+        width: fit-content;
+        margin: 50px 0 ;
+
+    }
+    #spotlight .spotlight-div .spotlight-image {
+        width: 100%;
+    }
+    #spotlight .spotlight-div .spotlight-logo {
+        width: 30px;
+    }
+    #spotlight .spotlight-div .left-center p{
+        font-size: 40px;
+    }
+    #spotlight .spotlight-div  .left a{
+        font-size: 14px;
+    }
+
+    /* -------------categories 1080px ------------- */
+  
+    #categories .categories-div .container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-around;
+        row-gap: 20px;
+    }
+
+    #categories .categories-div .container .items  {
+        width: 90px;
+
+    }
+    #categories .categories-div .container  li a{
+        padding: 10px;
+    }
+    #categories .categories-div .tophead div {
+        width: 12px;
+        height: 25px;
+        border-radius: 4px;
+    }
+    #categories .categories-div .tophead h3 {
+        font-size: 13px; 
+    }
+    #categories .categories-div .mainhead p {
+        font-size: 20px;
+    }
+    #categories .categories-div .container .items .items-image {
+        max-width:25px;
+    }
+    /* ------------------- products 1080px ------------------- */
+    #products .products-div .items .item .item-image .item-new-offer .item-new{
+        padding: 3px 7px;
+    }
+    #products .products-div .items .item .item-image .item-new-offer p{
+        font-size: 10px;
+    }
+    #products .products-div .items .item .item-image .item-new-offer .item-offer{
+        padding: 3px 7px;
+    }
+    #products .products-div .items .item .item-image .addCart p{
+        padding: 6px 0;
+        font-size: 12px;
+    }
+    #products .products-div .items .item .item-main .item-head {
+        font-size: 14px;
+    }
+    #products .products-div .items .item .item-main .bottom-part .price{
+        font-size: 13px;
+    }
+    #products .products-div .items .item .item-main .bottom-part div i{
+        font-size: 10px;
+    }
+    #products .products-div .items .item .item-main .bottom-part .review {
+        font-size: 12px;
+    }
+    #products .products-div .items .item .item-bottom .color div{
+        width: 12px;
+    }
+
+    #add-product .wrapper .add-product-div form .input-div input { 
+        width: 300px;
+    }
+    #add-product .wrapper .add-product-div form .input-div textarea { 
+        width: 300px;
+    }
+
+
+
+}
+
+
+
+/* ----------------------- responsive 540px ----------------------- */
+/* ----------------------------------------------------------------- */
+@media only screen and (max-width:540px){
+    .wrapper{
+        max-width: 480px;
+    }
+    .offer .offer-div .summerSale {
+        width: fit-content;
+        white-space:normal;
+        align-items: center;
+    
+    }
+    footer .copyright {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+}
+
+
+
+/* ----------------------- responsive 480px ----------------------- */
+/* ----------------------------------------------------------------- */
+@media only screen and (max-width:480px){
+    .wrapper{
+        max-width: 360px;
+    }
+    #spotlight .spotlight-div .spotlight-logo {
+        width: 20px;
+    }
+    #spotlight .spotlight-div .left-center p{
+        font-size: 30px;
+    }
+    #spotlight .spotlight-div  .left a{
+        font-size: 12px;
+    }
+    #spotlight .spotlight-div .left-top {
+
+        column-gap: 10px;
+    }
+    #spotlight .spotlight-div h2 {
+        font-size: 12px;
+    }
+    /* -------------categories 480px ------------- */
+
+    #categories .categories-div .tophead h3 {
+        font-size: 12px; 
+    }
+    #categories .categories-div .container .items  {
+        width: 70px;
+
+    }
+    #categories .categories-div .mainhead p {
+        font-size: 20px;
+    }
+    #categories .categories-div .container .items .items-image {
+        max-width:20px;
+    }
+
+    #categories .categories-div .mainhead {
+        margin: 7px 0;
+    }  
+    #products .products-div .items .item .item-main .item-head {
+        font-size: 13px;
+    }
+    footer .footer-main {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    #add-product .wrapper .add-product-div form .input-div input { 
+        width: 250px;
+    }
+    #add-product .wrapper .add-product-div form .input-div textarea { 
+        width: 250px;
+    }
+
+
+
+}
+
+
+/* ----------------------- responsive 360px ----------------------- */
+/* ----------------------------------------------------------------- */
+@media only screen and (max-width:360px){
+    .wrapper{
+        max-width: 320px;
+    }
+    #products .products-div .items .item .item-main .bottom-part .price{
+        font-size: 12px;
+    }
+    #products .products-div .items .item .item-main .bottom-part div i{
+        font-size: 9px;
+    }
+    #products .products-div .items .item .item-main .bottom-part .review {
+        font-size: 11px;
+    }
+    #products .products-div .items .item .item-main .item-head {
+        font-size: 12px;
+    }
+}
+
