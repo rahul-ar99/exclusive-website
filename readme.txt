@@ -1,4 +1,4 @@
-import modules
+import packages
 
-1. import django : pip install django
-2. import pillow : pip install pillow
+1. django : pip install django
+2. pillow : pip install pillow
