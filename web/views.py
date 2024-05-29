@@ -8,7 +8,7 @@ from datetime import date
 from web.models import Subscribe, Product, Spotlight
 from web.form import ProductForm
 
-# Create your views here.
+
 def index(request):
     spotlight = Spotlight.objects.last()
     products = Product.objects.all()
@@ -22,12 +22,6 @@ def index(request):
     games_category = Product.objects.filter(product_category='gaming')
     camera_category = Product.objects.filter(product_category='camera')
 
-
-
-
-
-
-
     context = {
         "products":products[:products_len:-1],
         "today":today,
@@ -40,12 +34,12 @@ def index(request):
         "spotlight":spotlight
     }
 
-    
     return render(request, 'home.html', context=context)
 
 
 def view_products(request):
     return render(request, 'product-detail.html')
+
 
 def product(request, id):
     instance = get_object_or_404(Product.objects.filter(id=id))
@@ -58,11 +52,11 @@ def product(request, id):
         "category_lists" : category[:category_len:-1],
         # "star_count":star_count
     }
+
     return render(request,'product-detail.html', context=context)
 
 
 def products_list(request):
-
     products = Product.objects.all()
     today = date.today()
     products_len = len(products) - 21
@@ -87,7 +81,6 @@ def add_product_page(request):
     return render(request,'add-product.html', context=context)
 
 
-#function
 def subscribe(request):
     email = request.POST.get('email')
     
@@ -109,13 +102,11 @@ def subscribe(request):
             "message":"You already a memeber, No need to register again"
         }
 
-
     return HttpResponse(json.dumps(response_data),content_type="applicatoin/javascript")
 
 
 #function
 def add_product(request): 
-
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():

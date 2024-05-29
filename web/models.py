@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from django.core.validators import MaxValueValidator, MinValueValidator
 
+
 PRODUCT_CATOGERY = (
     ("phone",'phone'),
     ("computer",'computer'),
@@ -10,9 +11,10 @@ PRODUCT_CATOGERY = (
     ("gaming",'gaming'),
     ("camera",'camera'),
 )
-PRODUCT_COLOR = (
 
-)
+# PRODUCT_COLOR = (
+
+# )
 
 
 class Subscribe(models.Model):
@@ -35,7 +37,8 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
-    
+
+
 class Spotlight(models.Model):
     logo = models.ImageField(upload_to='spotlight/')
     product_name = models.CharField(max_length=50)

@@ -150,6 +150,7 @@ header .header-div .right_nav .searchDiv input:active + .searchDiv{
 
 header .header-div .right_nav div i {
     font-size: 25px;
+    cursor: pointer;
 }
 
 
